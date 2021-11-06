@@ -23,56 +23,46 @@
                     </tr>
                 </thead>
                 <tbody>
+                    {% for user in users %}
                     <tr>
-                        <th scope="row">1</th>
-                        <td>Mark</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
+                        <th scope="row">{{user.id}}</th>
+                        <td>{{user.first_name}} {{user.last_name}}</td>
+                        <td>{{user.email}}</td>
+                        <td>{{user.age}}</td>
                     </tr>
-                    <tr>
-                        <th scope="row">2</th>
-                        <td>Jacob</td>
-                        <td>Thornton</td>
-                        <td>@fat</td>
-                    </tr>
-                    <tr>
-                        <th scope="row">3</th>
-                        <td>Larry</td>
-                        <td>the Bird</td>
-                        <td>@twitter</td>
-                    </tr>
+                    {% endfor %}
                 </tbody>
             </table>
         </div>
         <div id="bottom-half">
             <h1>Add a User</h1>
             <div id="add-fields">
-                <form action="/process" method='POST'>
+                <form action="/createUser" method='POST'>
                 {% csrf_token %}
-                    <div class="cols">
+                    <div class="rows">
                         <div class="sub-input">
                             <label for="first_name">First Name</label>
-                            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Input first name here">
+                            <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter here">
                         </div>
-                        <div class="sub-input">
-                            <label for="email">Email</label>
-                            <input type="text" name="email" id="email" class="form-control" placeholder="Input email here">
-                        </div>
-                    </div>
-                    <div class="cols">
                         <div class="sub-input">
                             <label for="last_name">Last Name</label>
-                            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Input last name here">
+                            <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Enter here">
+                        </div>
+                    </div>
+                    <div class="rows">
+                        <div class="sub-input">
+                            <label for="email">Email</label>
+                            <input type="text" name="email" id="email" class="form-control" placeholder="Enter here">
                         </div>
                         <div class="sub-input">
                             <label for="age">Age</label>
-                            <input type="text" name="age" id="age" class="form-control" placeholder="Input age here">
+                            <input type="number" name="age" id="age" class="form-control" placeholder="Enter here">
                         </div>
                     </div>
+                    <div class="col text-center">
+                        <button class="btn btn-primary">Add</button>
+                    </div>
                 </form>
-            </div>
-            <div class="col text-center">
-                <button class="btn btn-primary">Add</button>
             </div>
         </div>
     </div>

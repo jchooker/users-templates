@@ -14,6 +14,7 @@
 
 #top-half {
     width: 850px;
+    margin: 0 0 0 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -30,6 +31,7 @@
 
 #bottom-half {
     width: 850px;
+    margin: 0 0 0 30px;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -38,20 +40,25 @@
 
 #add-fields form {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     text-align: left;
     padding: 0 0 20px 0;
 }
 
-.cols {
+.rows {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    padding: 0 20px 0 0;
+}
+
+.sub-input {
     padding: 0 20px 0 0;
 }
 
 .btn {
-    margin-right: 20px;
+    margin: 20px 30px 0 0;
 }
 
 ::-webkit-input-placeholder {
